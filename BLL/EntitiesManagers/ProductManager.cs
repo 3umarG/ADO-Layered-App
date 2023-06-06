@@ -33,6 +33,24 @@ namespace BLL.EntitiesManagers
             return products;
         }
 
+        public  static bool DeleteProductByID(int ID)
+        {
+            try
+            {
+                 manager.ExecuteNonQuery("DeleteProductByID", new Dictionary<string, object>
+                {
+                    ["ID"] = ID
+                });
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+            }
+            return false;
+        }
+
+        #region Mapping Functions
         private static ProductList MappingDataTableToProductList(DataTable productsDT)
         {
             var list = new ProductList();
@@ -93,5 +111,6 @@ namespace BLL.EntitiesManagers
 
             return product;
         }
+        #endregion
     }
 }

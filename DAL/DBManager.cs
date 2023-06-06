@@ -93,5 +93,32 @@ namespace DAL
         }
 
 
+        // Overloading functions for parameters 
+        public  int ExecuteNonQuery(string storedProcedureName , Dictionary<string , object> Params)
+        {
+            int R = -1;
+            try
+            {
+                if (sqlConn.State == ConnectionState.Closed && Params.Count > 0)
+                    sqlConn.Open();
+
+                sqlCommand.CommandText = storedProcedureName;
+                sqlCommand.Parameters.Clear();
+                foreach (var param in Params)
+                {
+                    sqlCommand.Parameters.AddWithValue(param.Key, param.Value);
+                }
+                R = sqlCommand.ExecuteNonQuery(); // this will throw exception because of ForeignKey  
+
+                sqlConn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+            }
+            return R;
+        }
+
     }
 }

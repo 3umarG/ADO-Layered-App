@@ -14,5 +14,10 @@ namespace Northwind_Form
             var products = ProductManager.SelectAllProducts();
             this.productsGV.DataSource = products;
         }
+
+        private void deleteFirstToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProductManager.DeleteProductByID(1);
+        }
     }
 }

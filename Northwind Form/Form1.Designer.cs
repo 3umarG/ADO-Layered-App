@@ -34,6 +34,7 @@
             loadOption = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             saveOption = new ToolStripMenuItem();
+            deleteFirstToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)productsGV).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             // manageMenu
             // 
-            manageMenu.DropDownItems.AddRange(new ToolStripItem[] { loadOption, toolStripSeparator1, saveOption });
+            manageMenu.DropDownItems.AddRange(new ToolStripItem[] { loadOption, toolStripSeparator1, saveOption, deleteFirstToolStripMenuItem });
             manageMenu.Name = "manageMenu";
             manageMenu.Size = new Size(62, 20);
             manageMenu.Text = "Manage";
@@ -81,6 +82,13 @@
             saveOption.Name = "saveOption";
             saveOption.Size = new Size(180, 22);
             saveOption.Text = "Save";
+            // 
+            // deleteFirstToolStripMenuItem
+            // 
+            deleteFirstToolStripMenuItem.Name = "deleteFirstToolStripMenuItem";
+            deleteFirstToolStripMenuItem.Size = new Size(180, 22);
+            deleteFirstToolStripMenuItem.Text = "Delete First";
+            deleteFirstToolStripMenuItem.Click += deleteFirstToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -107,5 +115,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem loadOption;
         private ToolStripMenuItem saveOption;
+        private ToolStripMenuItem deleteFirstToolStripMenuItem;
     }
 }
