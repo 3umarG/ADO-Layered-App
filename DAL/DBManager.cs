@@ -73,12 +73,13 @@ namespace DAL
             return o;
         }
 
-        public DataTable ExecuteDataTable(string storedProcedureName)
+        public DataTable ExecuteDataTable(string storedProcedureName , CommandType type = CommandType.StoredProcedure)
         {
             DT.Clear();
             try
             {
                 sqlCommand.Parameters.Clear();
+                sqlCommand.CommandType = type;
                 sqlCommand.CommandText = storedProcedureName;
 
                 dataAdapter.Fill(DT);
