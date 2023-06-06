@@ -9,6 +9,6 @@ namespace BLL.Entities
     public enum EntityState
     {
         // For making mannual RowState : Added , Modified , Deleted , Attached
-        Added , Modified , Deleted
+        Attached ,Added , Modified , Deleted
     }
 }

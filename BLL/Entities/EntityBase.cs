@@ -8,6 +8,6 @@ namespace BLL.Entities
 {
     public class EntityBase
     {
-        public EntityState State { get; set; } = EntityState.Added;
+        public EntityState State { get; set; } = EntityState.Attached;
     }
 }
