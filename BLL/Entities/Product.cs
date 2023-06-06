@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Entities
 {
-    public class Product
+    public class Product : EntityBase
     {
 
         public int ProductID { get; set; }
